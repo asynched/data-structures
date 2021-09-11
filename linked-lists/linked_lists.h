@@ -14,3 +14,4 @@ LinkedListType *createList();
 void appendNode(LinkedListType *list, int value);
 void printList(LinkedListType *list);
 void popNode(LinkedListType *list);
+void clearList(LinkedListType *list);

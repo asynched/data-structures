@@ -62,6 +62,19 @@ void popNode(LinkedListType *list)
   NodeType *temporary = list->elements;
   NodeType *aux = NULL;
 
+  if (list->length == 0)
+    return;
+
+  if (list->length == 1)
+  {
+    aux = list->elements;
+    list->elements = NULL;
+    list->length--;
+    free(aux);
+
+    return;
+  }
+
   for (int i = 0; i < list->length; ++i)
   {
     if (i == list->length - 2)
@@ -89,4 +102,14 @@ void printList(LinkedListType *list)
   }
 
   printf("]\n");
+}
+
+void clearList(LinkedListType *list)
+{
+  const int LENGTH = list->length;
+
+  for (int i = 0; i < LENGTH; ++i)
+  {
+    popNode(list);
+  }
 }
